@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './post-create.component.scss'
 })
 export class PostCreateComponent {
+  enteredValue="";
   newPost = 'NO CONTENT';
 
   onAddPost() {
-    this.newPost = "The user's post.";
+    this.newPost = this.enteredValue;
   }
 }
