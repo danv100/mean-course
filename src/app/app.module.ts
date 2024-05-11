@@ -14,6 +14,7 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { PostsService } from './posts/posts.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     MatExpansionModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    PostsService
   ],
   bootstrap: [AppComponent]
 })
