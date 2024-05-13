@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card color="secondary">
   <mat-spinner *ngIf="isLoading"></mat-spinner>
   <form (submit)="onSavePost(postForm)" #postForm="ngForm" *ngIf="!isLoading">
     <mat-form-field>
@@ -13,6 +13,9 @@
         #title="ngModel">
         <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
     </mat-form-field>
+    <div>
+      <button mat-button type="button" color="secondary">Pick Image</button>
+    </div>
     <mat-form-field>
       <textarea
         matInput
