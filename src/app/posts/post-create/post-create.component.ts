@@ -7,16 +7,19 @@ import { Post } from '../post.model';
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
-  styleUrl: './post-create.component.scss'
+  styleUrl: './post-create.component.scss',
 })
 export class PostCreateComponent implements OnInit {
   enteredContent = '';
   enteredTitle = '';
   private mode = 'create';
   private postId: string;
-  private post: Post;
+  post: Post;
 
-  constructor(public postsService: PostsService, public route: ActivatedRoute) {}
+  constructor(
+    public postsService: PostsService,
+    public route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -31,10 +34,19 @@ export class PostCreateComponent implements OnInit {
     });
   }
 
-  onAddPost(form: NgForm) {
-    if (form.invalid) {return;};
-
-    this.postsService.addPost(form.value.title, form.value.content);
+  onSavePost(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    if (this.mode == 'create') {
+      this.postsService.addPost(form.value.title, form.value.content);
+    } else {
+      this.postsService.updatePost(
+        this.postId,
+        form.value.title,
+        form.value.content
+      );
+    }
     form.resetForm();
   }
 }
