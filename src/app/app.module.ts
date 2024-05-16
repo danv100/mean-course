@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule} from '@angular/material/input';
-import { MatCardModule} from '@angular/material/card';
-import { MatButtonModule} from '@angular/material/button';
-import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     PostsComponent,
     PostCreateComponent,
     HeaderComponent,
-    PostListComponent
+    PostListComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,12 +37,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    MatPaginatorModule,
+    HttpClientModule,
   ],
-  providers: [
-    provideAnimationsAsync(),
-    PostsService
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync(), PostsService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
