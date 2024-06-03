@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PostsComponent } from './posts/posts.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HeaderComponent } from './header/header.component';
 import { PostsService } from './posts/posts.service';
@@ -18,7 +17,6 @@ import { PostsModule } from './posts/posts.module';
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent,
     HeaderComponent,
     ErrorComponent
   ],
